@@ -78,7 +78,7 @@ export default function UnitConverter() {
     <div className="unit-converter rounded-3xl">
 
       {/* Masthead */}
-      <div className="text-black flex pb-4 mb-6 border-b-2
+      <div className="text-white flex pb-4 mb-6 border-b-2
        border-blue-700 rounded-md">
         <div className="px-5 p-10 text-justify center ">
           <h1 className="mb-6 font-bold text-sm leading-none tracking-wide sm:text-4xl text-center">
@@ -92,12 +92,12 @@ export default function UnitConverter() {
 
           
         <div className="ml-auto text-center font-bold   <br />
-         uppercase leading-relaxed tracking-widest text-black sm:block 
+         uppercase leading-relaxed tracking-widest text-white sm:block 
         relative  flex flex-col items-center justify-center  pt-2 pb-6  h-12 w-12 flex-none 
         rounded-full border-2
          border-green-700 font-serif text-xl italic sm:h-[52px] sm:w-[52px] mt-9 mb-4 mr-10 ">
           SI<span className="  pointer-events-none absolute inset-[6px] rounded-full border
-           border-blue-950 " />
+           border-orange-500 " />
           
         </div>
 
@@ -127,7 +127,7 @@ export default function UnitConverter() {
                        md:border-l-2 md:px-0 md:py-1 md:pl-2.5 ${
                       key === catKey
                         ? "border-yellow-700 font-semibold text-black"
-                        : "border-transparent text-white hover:text-blue-700"
+                        : "border-transparent text-white hover:text-blue-500"
                     }`}
                   >
                     {c.label}
@@ -140,7 +140,7 @@ export default function UnitConverter() {
         {/* Main panel */}
         <main className=" border border-blue-400 rounded-md">
           <div className=" bg-[#F9A8D4]/40 border-b border-blue-500 px-6 pb-3.5 pt-5 rounded-md">
-            <h2 className="mb-1 font-bold  text-[#2c5fd6]">{cat.label}</h2>
+            <h2 className="mb-1 font-bold  text-blue-900">{cat.label}</h2>
             <p className="text-sm leading-relaxed font-semibold text-black">{cat.desc}</p>
           </div>
 
