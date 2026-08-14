@@ -75,41 +75,43 @@ export default function UnitConverter() {
       : "—";
 
   return (
-    <div className="unit-converter">
+    <div className="unit-converter rounded-3xl">
 
       {/* Masthead */}
-      <div className="text-black flex items-end gap-4 pb-4 mb-6 border-b-2
+      <div className="text-black flex pb-4 mb-6 border-b-2
        border-blue-700 rounded-md">
-        <div className="relative flex h-12 w-12 flex-none items-center justify-center 
-        rounded-full border-2
-         border-green-700 font-serif text-xl italic sm:h-[52px] sm:w-[52px]">
-          ≈<span className="  pointer-events-none absolute inset-[6px] rounded-full border
-           border-blue-950" />
-        </div>
-        <div>
-          <h1 className="font-bold text-sm leading-none tracking-wide sm:text-4xl">
+        <div className="px-5 p-10 text-justify center ">
+          <h1 className="mb-6 font-bold text-sm leading-none tracking-wide sm:text-4xl text-center">
             GROUP 3 UNIT CONVERTER PROJECT
           </h1>
-          <p className="mt-1.5 max-w-[46ch] text-md leading-snug text-blue-700">
-            One instrument for translating between the units of mathematics, physics,
-            chemistry, computing, and everyday measure that is KNOWN.
+          <p className="mt-1.5 max-w-[46ch] text-md leading-snug text-blue-700 text-bold">
+            A unified converter for transforming measurements across mathematics, 
+            physics, chemistry, computing, and everyday life.
           </p>
         </div>
-        <div className="ml-auto hidden text-right font-bold
-         uppercase leading-relaxed tracking-widest text-black sm:block">
-          <br />
-          Universal Scale
+
+          
+        <div className="ml-auto text-center font-bold   <br />
+         uppercase leading-relaxed tracking-widest text-black sm:block 
+        relative  flex flex-col items-center justify-center  pt-2 pb-6  h-12 w-12 flex-none 
+        rounded-full border-2
+         border-green-700 font-serif text-xl italic sm:h-[52px] sm:w-[52px] mt-9 mb-4 mr-10 ">
+          SI<span className="  pointer-events-none absolute inset-[6px] rounded-full border
+           border-blue-950 " />
+          
         </div>
+
+      
       </div>
 
       <div className=" bg-green-600/40 text-black 
       grid grid-cols-1 items-start  md:grid-cols-[210px_1fr] 
        rounded-full">
         {/* Category rail */}
-        <nav className="flex gap-1.5 overflow-x-auto border-b border-yellow-500 
+        <nav className="flex gap-1.5 overflow-x-auto border-b border-yellow-800 
         pb-2 md:flex-col md:gap-4 md:overflow-visible md:border-b-0 md:pb-0">
           {GROUP_ORDER.map((group) => (
-            <div key={group} className="bg-green-300 rounded contents md:block">
+            <div key={group} className="bg-green-700 rounded contents md:block">
               <h3 className="ml-0.5 mb-1.5 hidden font-bold 
                text-black md:block">
                 {group}
@@ -124,8 +126,8 @@ export default function UnitConverter() {
                        text-left text-sm transition-colors md:whitespace-normal md:border-b-0 
                        md:border-l-2 md:px-0 md:py-1 md:pl-2.5 ${
                       key === catKey
-                        ? "border-yellow-500 font-semibold text-black"
-                        : "border-transparent text-white hover:text-blue-500"
+                        ? "border-yellow-700 font-semibold text-black"
+                        : "border-transparent text-white hover:text-blue-700"
                     }`}
                   >
                     {c.label}
@@ -137,8 +139,8 @@ export default function UnitConverter() {
 
         {/* Main panel */}
         <main className=" border border-blue-400 rounded-md">
-          <div className=" bg-[#F9A8D4]/40 border-b border-blue-400 px-6 pb-3.5 pt-5 rounded-md">
-            <h2 className="mb-1 font-bold ">{cat.label}</h2>
+          <div className=" bg-[#F9A8D4]/40 border-b border-blue-500 px-6 pb-3.5 pt-5 rounded-md">
+            <h2 className="mb-1 font-bold  text-[#2c5fd6]">{cat.label}</h2>
             <p className="text-sm leading-relaxed font-semibold text-black">{cat.desc}</p>
           </div>
 
@@ -177,7 +179,7 @@ export default function UnitConverter() {
               title="Swap units"
               className="mb-9 flex h-9 w-9 rotate-90 items-center justify-center justify-self-center 
               rounded-full border-[1.5px] border-green-900 text-base transition-colors
-               hover:bg-green-300 hover:text-panel sm:rotate-0"
+               hover:bg-green-300 hover:text-slate-950 sm:rotate-0"
             >
               ⇄
             </button>
@@ -242,8 +244,9 @@ export default function UnitConverter() {
         </main>
       </div>
 
-      <footer className=" bg-[#86EFAC]/50 text-center font-bold tracking-wide text-black">
-        Every figure above is computed live · Values based on SI definitions
+      <footer className=" bg-[#86EFAC]/50 text-center font-bold tracking-wide text-black mt-4">
+      The all-in-one converter for scientific, digital, and everyday units.
+      Values based on SI definitions.
       </footer>
     </div>
   );

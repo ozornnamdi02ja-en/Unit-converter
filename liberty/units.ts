@@ -35,10 +35,54 @@ export type Category = LinearCategory | SpecialCategory;
 ========================================================= */
 
 export const CATS: Record<string, Category> = {
+  // ==========================================
+  // 📐 MATHEMATICS & GEOMETRY
+  // ==========================================
+  angle: {
+    type: "linear",
+    label: "Angle",
+    group: "Mathematics",
+    base: "radian",
+    desc: "Rotation and inclination, in the language of geometry.",
+    units: {
+      radian: { label: "Radian (rad)", f: 1 },
+      degree: { label: "Degree (°)", f: 0.0174532925 },
+      arcminute: { label: "Arcminute (′)", f: 0.0002908882 },
+      arcsecond: { label: "Arcsecond (″)", f: 0.0000048481 },
+      gradian: { label: "Gradian (grad)", f: 0.0157079633 },
+      revolution: { label: "Revolution (turn)", f: 6.2831853072 },
+    },
+    quick: [1, 45, 90],
+  },
+
+  area: {
+    type: "linear",
+    label: "Area",
+    group: "Mathematics",
+    base: "square metre",
+    desc: "Two-dimensional extent, from crop fields to continents.",
+    units: {
+      sqMillimetre: { label: "Square millimetre (mm²)", f: 1e-6 },
+      sqCentimetre: { label: "Square centimetre (cm²)", f: 1e-4 },
+      sqMetre: { label: "Square metre (m²)", f: 1 },
+      hectare: { label: "Hectare (ha)", f: 10000 },
+      sqKilometre: { label: "Square kilometre (km²)", f: 1e6 },
+      sqInch: { label: "Square inch (in²)", f: 0.00064516 },
+      sqFoot: { label: "Square foot (ft²)", f: 0.09290304 },
+      sqYard: { label: "Square yard (yd²)", f: 0.83612736 },
+      acre: { label: "Acre (ac)", f: 4046.8564224 },
+      sqMile: { label: "Square mile (mi²)", f: 2589988.110336 },
+    },
+    quick: [1, 10, 100],
+  },
+
+  // ==========================================
+  // 🔬 PHYSICS & ENGINEERING
+  // ==========================================
   length: {
     type: "linear",
     label: "Length",
-    group: "Mechanics",
+    group: "Physics",
     base: "metre",
     desc: "Distance, from the atomic to the astronomical.",
     units: {
@@ -64,7 +108,7 @@ export const CATS: Record<string, Category> = {
   mass: {
     type: "linear",
     label: "Mass",
-    group: "Mechanics",
+    group: "Physics",
     base: "kilogram",
     desc: "Quantity of matter, from particles to planets.",
     units: {
@@ -84,80 +128,10 @@ export const CATS: Record<string, Category> = {
     quick: [1, 10, 100],
   },
 
-  area: {
-    type: "linear",
-    label: "Area",
-    group: "Mechanics",
-    base: "square metre",
-    desc: "Two-dimensional extent, from crop fields to continents.",
-    units: {
-      sqMillimetre: { label: "Square millimetre (mm²)", f: 1e-6 },
-      sqCentimetre: { label: "Square centimetre (cm²)", f: 1e-4 },
-      sqMetre: { label: "Square metre (m²)", f: 1 },
-      hectare: { label: "Hectare (ha)", f: 10000 },
-      sqKilometre: { label: "Square kilometre (km²)", f: 1e6 },
-      sqInch: { label: "Square inch (in²)", f: 0.00064516 },
-      sqFoot: { label: "Square foot (ft²)", f: 0.09290304 },
-      sqYard: { label: "Square yard (yd²)", f: 0.83612736 },
-      acre: { label: "Acre (ac)", f: 4046.8564224 },
-      sqMile: { label: "Square mile (mi²)", f: 2589988.110336 },
-    },
-    quick: [1, 10, 100],
-  },
-
-  volume: {
-    type: "linear",
-    label: "Volume",
-    group: "Mechanics",
-    base: "cubic metre",
-    desc: "Capacity and displacement, from a teaspoon to a reservoir.",
-    units: {
-      millilitre: { label: "Millilitre (mL)", f: 1e-6 },
-      cubicCentimetre: { label: "Cubic centimetre (cm³)", f: 1e-6 },
-      litre: { label: "Litre (L)", f: 0.001 },
-      cubicMetre: { label: "Cubic metre (m³)", f: 1 },
-      teaspoon: { label: "Teaspoon (tsp)", f: 4.92892159375e-6 },
-      tablespoon: { label: "Tablespoon (tbsp)", f: 1.478676478125e-5 },
-      fluidOunceUS: { label: "US fluid ounce (fl oz)", f: 2.95735295625e-5 },
-      cupUS: { label: "US cup", f: 2.365882365e-4 },
-      pintUS: { label: "US pint (pt)", f: 4.73176473e-4 },
-      quartUS: { label: "US quart (qt)", f: 9.46352946e-4 },
-      gallonUS: { label: "US gallon (gal)", f: 3.785411784e-3 },
-      gallonImperial: { label: "Imperial gallon (gal)", f: 4.54609e-3 },
-      cubicInch: { label: "Cubic inch (in³)", f: 1.6387064e-5 },
-      cubicFoot: { label: "Cubic foot (ft³)", f: 0.028316846592 },
-      barrelOil: { label: "Oil barrel (bbl)", f: 0.158987294928 },
-    },
-    quick: [1, 10, 100],
-  },
-
-  time: {
-    type: "linear",
-    label: "Time",
-    group: "Mechanics",
-    base: "second",
-    desc: "Duration, from nanoseconds to centuries.",
-    units: {
-      nanosecond: { label: "Nanosecond (ns)", f: 1e-9 },
-      microsecond: { label: "Microsecond (µs)", f: 1e-6 },
-      millisecond: { label: "Millisecond (ms)", f: 0.001 },
-      second: { label: "Second (s)", f: 1 },
-      minute: { label: "Minute (min)", f: 60 },
-      hour: { label: "Hour (h)", f: 3600 },
-      day: { label: "Day (d)", f: 86400 },
-      week: { label: "Week (wk)", f: 604800 },
-      month: { label: "Month (avg., 30.44 d)", f: 2629800 },
-      year: { label: "Year (365.25 d)", f: 31557600 },
-      decade: { label: "Decade", f: 315576000 },
-      century: { label: "Century", f: 3155760000 },
-    },
-    quick: [1, 10, 100],
-  },
-
   speed: {
     type: "linear",
     label: "Speed",
-    group: "Mechanics",
+    group: "Physics",
     base: "metre/second",
     desc: "Rate of travel, from a walking pace to light itself.",
     units: {
@@ -175,7 +149,7 @@ export const CATS: Record<string, Category> = {
   force: {
     type: "linear",
     label: "Force",
-    group: "Mechanics",
+    group: "Physics",
     base: "newton",
     desc: "Push and pull, as felt by objects and structures.",
     units: {
@@ -191,7 +165,7 @@ export const CATS: Record<string, Category> = {
   pressure: {
     type: "linear",
     label: "Pressure",
-    group: "Mechanics",
+    group: "Physics",
     base: "pascal",
     desc: "Force distributed over area, from weather to welding.",
     units: {
@@ -209,7 +183,7 @@ export const CATS: Record<string, Category> = {
   torque: {
     type: "linear",
     label: "Torque",
-    group: "Mechanics",
+    group: "Physics",
     base: "newton-metre",
     desc: "Rotational force, as applied by wrenches and engines.",
     units: {
@@ -224,7 +198,7 @@ export const CATS: Record<string, Category> = {
   density: {
     type: "linear",
     label: "Density",
-    group: "Mechanics",
+    group: "Physics",
     base: "kilogram/cubic metre",
     desc: "Mass packed into a given volume of matter.",
     units: {
@@ -238,30 +212,10 @@ export const CATS: Record<string, Category> = {
     quick: [1, 10, 100],
   },
 
-  energy: {
-    type: "linear",
-    label: "Energy",
-    group: "Energy & Power",
-    base: "joule",
-    desc: "Capacity to do work, from a calorie to a kilowatt-hour.",
-    units: {
-      joule: { label: "Joule (J)", f: 1 },
-      kilojoule: { label: "Kilojoule (kJ)", f: 1000 },
-      calorie: { label: "Calorie (cal)", f: 4.184 },
-      kilocalorie: { label: "Kilocalorie / food Calorie (kcal)", f: 4184 },
-      wattHour: { label: "Watt-hour (Wh)", f: 3600 },
-      kilowattHour: { label: "Kilowatt-hour (kWh)", f: 3.6e6 },
-      electronvolt: { label: "Electronvolt (eV)", f: 1.602176634e-19 },
-      btu: { label: "British thermal unit (BTU)", f: 1055.05585262 },
-      footPound: { label: "Foot-pound (ft·lb)", f: 1.3558179483 },
-    },
-    quick: [1, 10, 100],
-  },
-
   power: {
     type: "linear",
     label: "Power",
-    group: "Energy & Power",
+    group: "Physics",
     base: "watt",
     desc: "Energy delivered per second, from bulbs to engines.",
     units: {
@@ -278,7 +232,7 @@ export const CATS: Record<string, Category> = {
   frequency: {
     type: "linear",
     label: "Frequency",
-    group: "Energy & Power",
+    group: "Physics",
     base: "hertz",
     desc: "Cycles per second, from rotations to radio waves.",
     units: {
@@ -291,6 +245,9 @@ export const CATS: Record<string, Category> = {
     quick: [1, 10, 100],
   },
 
+  // ==========================================
+  // 🧪 CHEMISTRY
+  // ==========================================
   amount: {
     type: "linear",
     label: "Amount of Substance",
@@ -323,6 +280,29 @@ export const CATS: Record<string, Category> = {
     quick: [1, 10, 100],
   },
 
+  energy: {
+    type: "linear",
+    label: "Energy",
+    group: "Chemistry",
+    base: "joule",
+    desc: "Capacity to do work, from a calorie to a kilowatt-hour.",
+    units: {
+      joule: { label: "Joule (J)", f: 1 },
+      kilojoule: { label: "Kilojoule (kJ)", f: 1000 },
+      calorie: { label: "Calorie (cal)", f: 4.184 },
+      kilocalorie: { label: "Kilocalorie / food Calorie (kcal)", f: 4184 },
+      wattHour: { label: "Watt-hour (Wh)", f: 3600 },
+      kilowattHour: { label: "Kilowatt-hour (kWh)", f: 3.6e6 },
+      electronvolt: { label: "Electronvolt (eV)", f: 1.602176634e-19 },
+      btu: { label: "British thermal unit (BTU)", f: 1055.05585262 },
+      footPound: { label: "Foot-pound (ft·lb)", f: 1.3558179483 },
+    },
+    quick: [1, 10, 100],
+  },
+
+  // ==========================================
+  // 💻 COMPUTING
+  // ==========================================
   data: {
     type: "linear",
     label: "Data Storage",
@@ -344,27 +324,62 @@ export const CATS: Record<string, Category> = {
     quick: [1, 10, 100],
   },
 
-  angle: {
+  // ==========================================
+  // 🧬 BIOLOGY & HEALTH / EVERYDAY MEASURES
+  // ==========================================
+  volume: {
     type: "linear",
-    label: "Angle",
-    group: "Earth & Everyday",
-    base: "radian",
-    desc: "Rotation and inclination, in the language of geometry.",
+    label: "Volume",
+    group: "Biology & Everyday",
+    base: "cubic metre",
+    desc: "Capacity and displacement, from a teaspoon to a reservoir.",
     units: {
-      radian: { label: "Radian (rad)", f: 1 },
-      degree: { label: "Degree (°)", f: 0.0174532925 },
-      arcminute: { label: "Arcminute (′)", f: 0.0002908882 },
-      arcsecond: { label: "Arcsecond (″)", f: 0.0000048481 },
-      gradian: { label: "Gradian (grad)", f: 0.0157079633 },
-      revolution: { label: "Revolution (turn)", f: 6.2831853072 },
+      millilitre: { label: "Millilitre (mL)", f: 1e-6 },
+      cubicCentimetre: { label: "Cubic centimetre (cm³)", f: 1e-6 },
+      litre: { label: "Litre (L)", f: 0.001 },
+      cubicMetre: { label: "Cubic metre (m³)", f: 1 },
+      teaspoon: { label: "Teaspoon (tsp)", f: 4.92892159375e-6 },
+      tablespoon: { label: "Tablespoon (tbsp)", f: 1.478676478125e-5 },
+      fluidOunceUS: { label: "US fluid ounce (fl oz)", f: 2.95735295625e-5 },
+      cupUS: { label: "US cup", f: 2.365882365e-4 },
+      pintUS: { label: "US pint (pt)", f: 4.73176473e-4 },
+      quartUS: { label: "US quart (qt)", f: 9.46352946e-4 },
+      gallonUS: { label: "US gallon (gal)", f: 3.785411784e-3 },
+      gallonImperial: { label: "Imperial gallon (gal)", f: 4.54609e-3 },
+      cubicInch: { label: "Cubic inch (in³)", f: 1.6387064e-5 },
+      cubicFoot: { label: "Cubic foot (ft³)", f: 0.028316846592 },
+      barrelOil: { label: "Oil barrel (bbl)", f: 0.158987294928 },
     },
-    quick: [1, 45, 90],
+    quick: [1, 10, 100],
+  },
+
+  time: {
+    type: "linear",
+    label: "Time",
+    group: "Biology & Everyday",
+    base: "second",
+    desc: "Duration, from nanoseconds to centuries.",
+    units: {
+      nanosecond: { label: "Nanosecond (ns)", f: 1e-9 },
+      microsecond: { label: "Microsecond (µs)", f: 1e-6 },
+      millisecond: { label: "Millisecond (ms)", f: 0.001 },
+      second: { label: "Second (s)", f: 1 },
+      minute: { label: "Minute (min)", f: 60 },
+      hour: { label: "Hour (h)", f: 3600 },
+      day: { label: "Day (d)", f: 86400 },
+      week: { label: "Week (wk)", f: 604800 },
+      month: { label: "Month (avg., 30.44 d)", f: 2629800 },
+      year: { label: "Year (365.25 d)", f: 31557600 },
+      decade: { label: "Decade", f: 315576000 },
+      century: { label: "Century", f: 3155760000 },
+    },
+    quick: [1, 10, 100],
   },
 
   temperature: {
     type: "special",
     label: "Temperature",
-    group: "Earth & Everyday",
+    group: "Biology & Everyday",
     base: "celsius",
     desc: "Thermal state, translated between four historical scales.",
     units: {
@@ -407,7 +422,7 @@ export const CATS: Record<string, Category> = {
   fuelEconomy: {
     type: "special",
     label: "Fuel Economy",
-    group: "Earth & Everyday",
+    group: "Biology & Everyday",
     base: "litres/100km",
     desc: "Efficiency of travel, an inverse relationship by nature.",
     units: {
@@ -451,11 +466,11 @@ export const CATS: Record<string, Category> = {
 };
 
 export const GROUP_ORDER = [
-  "Mechanics",
-  "Energy & Power",
+  "Mathematics",
+  "Physics",
   "Chemistry",
   "Computing",
-  "Earth & Everyday",
+  "Biology & Everyday",
 ];
 
 /* =========================================================
