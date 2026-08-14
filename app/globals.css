@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(#d6dbe5 1px, transparent 1px),
+      linear-gradient(90deg, #d6dbe5 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: 0 0, 0 0;
+  }
+}
+
+
+@layer components {
+  .tape-perf {
+    position: relative;
+  }
+  .tape-perf::before,
+  .tape-perf::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-image: radial-gradient(circle at 6px 4px, #ebeef3 4px, transparent 4.5px);
+    background-size: 14px 8px;
+    background-repeat: repeat-x;
+    pointer-events: none;
+  }
+  .tape-perf::before {
+    top: -7px;
+  }
+  .tape-perf::after {
+    bottom: -7px;
+    transform: scaleY(-1);
+  }
+}
+
+
+
+.unit-converter {
+  min-height: 100vh;
+  background-image: url('/unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+.green-column {
+  width: 10%;
+  margin: 0;
+}
